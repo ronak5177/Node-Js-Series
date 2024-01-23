@@ -2,3 +2,6 @@
 1705982294855: GET: /search?search_query=javascript+template+integration New Request Received
 1705982481793: GET: /signup New Request Received
 1705982543981: GET: /signup New Request Received
+1705983356164: GET: /signup New Request Received
+1705983357706: GET: /signup New Request Received
+1705983359720: GET: / New Request Received

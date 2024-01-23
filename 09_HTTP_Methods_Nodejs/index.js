@@ -2,7 +2,6 @@ const http = require('http')
 const fs = require("fs")
 const url = require("url")
 
-
 const myserver = http.createServer((req, res)=>{
     const log = `${Date.now()}: ${req.method}: ${req.url} New Request Received\n`;
     if(req.url === "/favicon.ico") return res.end()
