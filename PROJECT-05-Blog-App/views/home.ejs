@@ -5,7 +5,20 @@
     <title>Home Page</title>
   </head>
   <body>
-    <%- include('./partials/nav') %>
+    <%- include('./partials/nav') %>   
+    
+    <div class="container mt-3 d-flex justify-content-center">
+      <% blogs.forEach(blog => { %>
+        <div class="card m-2" style="width: 18rem;">
+          <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= blog.title %></h5>
+            <p class="card-text"><%= blog.body %></p>
+            <a href="#" class="btn btn-primary">View</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
 
     <%- include('./partials/scripts') %>
 </body>
