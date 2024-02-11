@@ -3,23 +3,33 @@
   <head>
     <%- include('./partials/head')  %>
     <title>Home Page</title>
+
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <%- include('./partials/nav') %>   
     
     <div class="container mt-3 d-flex justify-content-center">
-      <% blogs.forEach(blog => { %>
-        <div class="card m-2" style="width: 18rem;">
-          <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= blog.title %></h5>
-            <p class="card-text"><%= blog.body %></p>
-            <a href="#" class="btn btn-primary">View</a>
+      <div class="row">
+        <% blogs.forEach(blog => { %>
+          <div class="col-lg-4">
+            <div class="card m-2" style="width: 18rem;">
+              <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= blog.title %></h5>
+                <p class="card-text"><%= blog.body.length > 30 ? 
+                  blog.body.substring(0, 30 - 3) + "..." : 
+                  blog.body%></p>
+                <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+              </div>
+            </div>
           </div>
-        </div>
-      <% }) %>
+        <% }) %>
+
+      </div>
     </div>
 
+    <%- include('./partials/footer') %>
     <%- include('./partials/scripts') %>
 </body>
 </html>
