@@ -1,0 +1,9 @@
+check the version:
+node --version
+
+To open repl:
+node
+
+To check npm version:
+npm -v
+
